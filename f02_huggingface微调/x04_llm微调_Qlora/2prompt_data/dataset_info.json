@@ -1,0 +1,46 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "json",
+  "dataset_size": 793419,
+  "description": "",
+  "download_checksums": {
+    "E:/1LLM_alg/2ft_Qlora/1qa_data/qa_data.jsonl": {
+      "num_bytes": 882879,
+      "checksum": null
+    }
+  },
+  "download_size": 882879,
+  "features": {
+    "input": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "output": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "prompt": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 1676298,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 793419,
+      "num_examples": 4260,
+      "dataset_name": "json"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
