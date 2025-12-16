@@ -1,0 +1,19 @@
+// 声明版本
+syntax = "proto3";
+
+// 定义输入数据类型格式
+message in_message{
+    string x = 1;
+}
+
+// 定义输出数据类型格式
+message out_message{
+  string var = 1; // 变量
+  repeated string list = 2;  // 列表
+  map<string, string> dict = 3;  // 字典
+}
+
+// 定义服务
+service xyz {
+  rpc Search(in_message) returns (out_message);
+}

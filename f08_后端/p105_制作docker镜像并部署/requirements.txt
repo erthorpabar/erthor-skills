@@ -1,0 +1,17 @@
+# 环境变量
+python-dotenv
+pydantic-settings
+
+# 后端框架
+fastapi
+uvicorn
+gunicorn
+
+# 
+sqlalchemy
+
+# 
+pydantic
+
+# 
+timescaledb
