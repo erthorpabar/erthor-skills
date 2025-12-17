@@ -1,5 +1,0 @@
-# 应用配置示例
-LLM_URL: "https://open.bigmodel.cn/api/paas/v4/chat/completions"
-LLM_API_KEY: "bcb4b79cf63d81bb74004a7438afe404.ZWtkkACpqBa522oQ"
-LLM_MODEL: "GLM-4-Flash-250414"
-
