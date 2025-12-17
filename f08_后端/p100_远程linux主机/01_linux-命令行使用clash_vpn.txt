@@ -1,0 +1,40 @@
+# ——————下载vpn
+
+# 下载clash core
+https://github.com/Kuingsmile/clash-core/releases
+下载clash-linux-amd64-v1.18.0.gz
+
+# 解压完 是单个同名文件
+gunzip clash-linux-amd64-v1.18.0.gz
+
+# 运行权限
+chmod +x clash-linux-amd64-v1.18.0
+
+# 创建文件夹
+# ~代表 home/用户名/ 
+mkdir -p ~/.config/clash
+
+# 下载订阅连接到创建的地址
+curl -o ~/.config/clash/config.yaml "https://sub.geekspeed.info/api/v1/client/subscribe?token=oxOiSq9wzWEoAG9w&flag=clash"
+
+# 开启当前文件夹vpn服务
+./clash-linux-amd64-v1.18.0
+
+# 新开命令行窗口，并设置端口，则可以使用vpn
+export http_proxy="http://127.0.0.1:7890"
+export https_proxy="http://127.0.0.1:7890"
+
+export http_proxy="http://127.0.0.1:8902"
+export https_proxy="http://127.0.0.1:8902"
+
+# 测试，返回html数据则为成功连接
+curl google.com
+
+
+
+
+
+
+
+
+

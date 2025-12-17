@@ -1,0 +1,46 @@
+# 下载comfyui
+git clone https://github.com/comfyanonymous/ComfyUI.git
+
+# 创建环境
+conda create -n comfy_py3 python=3.10 -y
+或
+sudo /data/anaconda3/bin/conda create -n comfy_py2 python=3.10 -y
+
+# 激活环境
+conda activate comfy_py
+
+# 退出环境
+conda deactivate
+
+# 下载依赖 在comfyui文件夹中
+pip install -r requirements.txt
+
+# 查看端口号是否被占用
+lsof -i:6002 
+lsof -i:7009
+
+# 开启服务
+python main.py --listen --port 6002 --cuda-device 1
+nohup python main.py --listen --port 6002 --cuda-device 3 关闭电脑仍然运行服务，并且在3号gpu上运行
+
+# 访问服务
+http://127.0.0.0:8188/
+http://192.168.31.34:6002 # 4090D
+http://106.13.33.123:6002 # A100
+
+# 关闭服务
+kill $(lsof -t -i:6002)
+kill PID
+crtl+c
+
+# 动态查看gpu占用
+watch -n 1 nvidia-smi
+
+# 删除虚拟环境
+conda remove --name comfy_py --all
+
+
+
+
+
+

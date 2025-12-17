@@ -1,0 +1,35 @@
+# ——————4090D
+ssh lingfeng@192.168.31.34
+123456
+
+# ——————3090X2
+ssh ls@192.168.31.30
+123456
+
+# ——————A100
+ssh ai@106.13.33.123
+LF123lf
+
+# ——————HH
+私钥权限问题
+icacls "E:\BaiduSyncdisk\deploy_fastapi\pass.pem" /inheritance:r  # 删除所有权限
+icacls "E:\BaiduSyncdisk\deploy_fastapi\pass.pem" /grant "$($env:USERNAME):(F)"  # 当前用户绝对控制权限
+
+ssh -i hh.pem ubuntu@13.56.82.62
+
+
+# ——————3v
+私钥权限问题
+icacls "D:\BaiduSyncdisk\deploy_fastapi\3v.pem" /inheritance:r  # 删除所有权限
+icacls "D:\BaiduSyncdisk\deploy_fastapi\3v.pem" /grant "$($env:USERNAME):(F)"  # 当前用户绝对控制权限
+
+ssh -i 3v.pem ubuntu@54.215.208.104
+
+
+# ——————主机种类
+share host = 共享系统
+vps = 独占系统 共享硬件
+dedicated host = 独占系统 独占硬件
+cloud host = 独占系统 动态分配硬件
+
+

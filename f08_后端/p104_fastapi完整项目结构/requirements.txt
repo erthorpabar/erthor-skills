@@ -1,0 +1,23 @@
+# 后端框架
+fastapi
+uvicorn
+
+# 网络请求
+requests
+websocket-client
+
+# 环境变量
+python-dotenv
+pydantic-settings
+
+# 数据库
+sqlalchemy
+asyncmy
+# 密码加密
+cryptography
+
+# 文件上传
+python-multipart
+
+# 图片处理
+Pillow

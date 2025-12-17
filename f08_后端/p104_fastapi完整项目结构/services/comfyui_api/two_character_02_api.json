@@ -1,0 +1,481 @@
+{
+  "11": {
+    "inputs": {
+      "unet_name": "flux-dev-fp8.safetensors",
+      "weight_dtype": "fp8_e4m3fn"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "15": {
+    "inputs": {
+      "clip_name1": "t5xxl_fp8_e4m3fn.safetensors",
+      "clip_name2": "clip_l.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "16": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "20": {
+    "inputs": {
+      "text": [
+        "68",
+        0
+      ],
+      "clip": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "22": {
+    "inputs": {
+      "noise": [
+        "26",
+        0
+      ],
+      "guider": [
+        "23",
+        0
+      ],
+      "sampler": [
+        "25",
+        0
+      ],
+      "sigmas": [
+        "24",
+        0
+      ],
+      "latent_image": [
+        "96",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "23": {
+    "inputs": {
+      "model": [
+        "85",
+        0
+      ],
+      "conditioning": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "BasicGuider"
+    }
+  },
+  "24": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": 20,
+      "denoise": 1,
+      "model": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "25": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "26": {
+    "inputs": {
+      "noise_seed": 123463
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "27": {
+    "inputs": {
+      "guidance": 3.5,
+      "conditioning": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
+  },
+  "31": {
+    "inputs": {
+      "samples": [
+        "22",
+        0
+      ],
+      "vae": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "51": {
+    "inputs": {
+      "image": "ComfyUI_temp_baulh_00005_.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "68": {
+    "inputs": {
+      "input_str": "The woman was on the left side of the picture,\nblack beret,\nLong golden hair,\nBlack turtleneck sweater,\nwhite pants,\n\nand the woman was on the right side of the picture,\nLight Yellow drill_hair,\nAmber hoodie,\nYellow Green shorts,\nin landscape.\n\nThe left woman heard the shouting, ran to the window, looked down, and saw the right woman downstairs."
+    },
+    "class_type": "in01_input_text",
+    "_meta": {
+      "title": "input_text🦄"
+    }
+  },
+  "77": {
+    "inputs": {
+      "provider": "CUDA"
+    },
+    "class_type": "pulid202_load_insightface",
+    "_meta": {
+      "title": "load_insightface2🦄"
+    }
+  },
+  "78": {
+    "inputs": {
+      "pulid_file": "pulid_flux_v0.9.0.safetensors"
+    },
+    "class_type": "pulid201_load_pulid",
+    "_meta": {
+      "title": "load_pulid2🦄"
+    }
+  },
+  "80": {
+    "inputs": {},
+    "class_type": "pulid203_load_evaclip",
+    "_meta": {
+      "title": "load_evaclip2🦄"
+    }
+  },
+  "81": {
+    "inputs": {},
+    "class_type": "pulid203_load_evaclip",
+    "_meta": {
+      "title": "load_evaclip2🦄"
+    }
+  },
+  "82": {
+    "inputs": {
+      "provider": "CUDA"
+    },
+    "class_type": "pulid202_load_insightface",
+    "_meta": {
+      "title": "load_insightface2🦄"
+    }
+  },
+  "83": {
+    "inputs": {
+      "pulid_file": "pulid_flux_v0.9.0.safetensors"
+    },
+    "class_type": "pulid201_load_pulid",
+    "_meta": {
+      "title": "load_pulid2🦄"
+    }
+  },
+  "84": {
+    "inputs": {
+      "weight": 1,
+      "start_at": 0,
+      "end_at": 1,
+      "model": [
+        "106",
+        0
+      ],
+      "pulid_flux": [
+        "78",
+        0
+      ],
+      "eva_clip": [
+        "80",
+        0
+      ],
+      "face_analysis": [
+        "77",
+        0
+      ],
+      "image": [
+        "51",
+        0
+      ],
+      "attn_mask": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "pulid204_apply_pulid",
+    "_meta": {
+      "title": "apply_pulid2🦄"
+    }
+  },
+  "85": {
+    "inputs": {
+      "weight": 1,
+      "start_at": 0,
+      "end_at": 1,
+      "model": [
+        "84",
+        0
+      ],
+      "pulid_flux": [
+        "83",
+        0
+      ],
+      "eva_clip": [
+        "81",
+        0
+      ],
+      "face_analysis": [
+        "82",
+        0
+      ],
+      "image": [
+        "103",
+        0
+      ],
+      "attn_mask": [
+        "97",
+        0
+      ]
+    },
+    "class_type": "pulid204_apply_pulid",
+    "_meta": {
+      "title": "apply_pulid2🦄"
+    }
+  },
+  "89": {
+    "inputs": {
+      "mask": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "92": {
+    "inputs": {
+      "code": "a*0.5",
+      "a": [
+        "100",
+        0
+      ],
+      "b": 0,
+      "c": 0
+    },
+    "class_type": "m05_math_interpreter",
+    "_meta": {
+      "title": "math_interpreter🦄"
+    }
+  },
+  "93": {
+    "inputs": {
+      "width": [
+        "92",
+        0
+      ],
+      "height": [
+        "101",
+        0
+      ],
+      "color": "#000000"
+    },
+    "class_type": "cl02_create_color_img",
+    "_meta": {
+      "title": "create_color_img🦄"
+    }
+  },
+  "94": {
+    "inputs": {
+      "width": [
+        "92",
+        0
+      ],
+      "height": [
+        "101",
+        0
+      ],
+      "color": "#FFFFFF"
+    },
+    "class_type": "cl02_create_color_img",
+    "_meta": {
+      "title": "create_color_img🦄"
+    }
+  },
+  "95": {
+    "inputs": {
+      "position": "right",
+      "image1": [
+        "94",
+        0
+      ],
+      "image2": [
+        "93",
+        0
+      ]
+    },
+    "class_type": "is05_img_concat",
+    "_meta": {
+      "title": "img_concat🦄"
+    }
+  },
+  "96": {
+    "inputs": {
+      "width": [
+        "100",
+        0
+      ],
+      "height": [
+        "101",
+        0
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "97": {
+    "inputs": {
+      "mask": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "m05_mask_invert",
+    "_meta": {
+      "title": "mask_invert🦄"
+    }
+  },
+  "98": {
+    "inputs": {
+      "mask": [
+        "97",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "99": {
+    "inputs": {
+      "image": [
+        "95",
+        0
+      ]
+    },
+    "class_type": "m02_img_to_mask",
+    "_meta": {
+      "title": "img_to_mask🦄"
+    }
+  },
+  "100": {
+    "inputs": {
+      "input_int": 1536
+    },
+    "class_type": "in02_input_int",
+    "_meta": {
+      "title": "input_int🦄"
+    }
+  },
+  "101": {
+    "inputs": {
+      "input_int": 1024
+    },
+    "class_type": "in02_input_int",
+    "_meta": {
+      "title": "input_int🦄"
+    }
+  },
+  "103": {
+    "inputs": {
+      "image": "ComfyUI_temp_baulh_00004_.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "106": {
+    "inputs": {
+      "lora_name": "flux_lora/推文韩漫都市言情_V1.0.safetensors",
+      "strength_model": 1,
+      "model": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoraLoaderModelOnly"
+    }
+  },
+  "107": {
+    "inputs": {
+      "quality": 90,
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "31",
+        0
+      ]
+    },
+    "class_type": "out03_img_save_jpg",
+    "_meta": {
+      "title": "img_save_jpg🦄"
+    }
+  }
+}

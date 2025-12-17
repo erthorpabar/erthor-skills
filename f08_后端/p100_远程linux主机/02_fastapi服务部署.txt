@@ -1,0 +1,41 @@
+# 创建环境
+conda create -n fastapi_aaa python=3.10 -y
+
+# 激活环境
+conda activate fastapi_aaa
+
+# 下载依赖
+pip install -r requirements.txt
+
+# 查看端口号占用
+lsof -i:7005
+lsof -i:7003
+
+# 开启服务
+linux
+export HOST=0.0.0.0 PORT=7005
+python server.py
+或
+nohup python server.py # 关闭电脑仍然运行服务
+
+# 访问服务
+http://13.56.82.62:7005
+
+# 关闭服务
+kill $(lsof -t -i:7005)
+kill PID
+crtl+c
+
+# 退出环境
+conda deactivate
+
+# fastapi文档
+http://13.56.82.62:7005/docs#/
+
+
+
+
+
+
+
+
