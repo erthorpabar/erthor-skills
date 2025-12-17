@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <!-- 这些信息都是给浏览器看的，不是给人看的 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 控制分享信息 -->
+    <meta property="og:title" content="我的网站"/> <!-- 分享的标题 -->
+    <meta property="og:url" content="https://example.com"/> <!-- 分享的网址 -->
+    <meta property="og:image" content="img/996.png"/> <!-- 分享必须显示的图片 -->
+    <meta property="og:type" content="website"/> <!-- 指定分享内容的类型为网站 -->
+    <meta property="og:description" content="网页描述"/> <!-- 分享链接的网页描述 -->
+    <meta property="og:locale" content="en_us"/> <!-- 分享的语言 -->
+    <meta property="og:site_name" content="网址所有者"/> <!-- 网址所有者 -->
+
+    <!-- 浏览器SEO排名信息 -->
+    <meta name="author" content="erthorpabar"> <!-- 声明页面的作者 -->
+    <meta name="description" content="描述信息"/> <!-- 网页的简要描述 -->
+    <meta name="title" content="标题" /> <!-- 指定网页的标题 -->
+    <meta name="robots" content="index, follow" /> <!-- 设置搜索引擎的抓取规则 -->
+    <!-- 
+        Index代表可以分析网页
+        Unindex代表不要分析网页
+        Follow代表可以访问网页链接
+        Unfollow代表不要访问网页链接
+    -->
+
+
+    <!-- 网页整体设置 -->
+    <!-- <meta http-equiv="refresh" content="30"> 30秒刷新一次 -->
+    <meta charset="UTF-8"> <!-- 指定解码编码规范 -->
+    <meta name="language" content="english"> <!-- 向搜索引擎指定网页的语言 -->
+    <meta name="googlebot" content="notranslate" /> <!-- 告诉谷歌不翻译 -->
+    <meta name="copyright" content="Copyright 2022"> <!-- 指定版权 -->
+    <meta name="format-detection" content="telephone=yes"/> <!-- 表示电话号码应显示为超文本链接，单击该链接即可拨打电话 -->
+    <meta name="HandheldFriendly" content="true"/> <!-- 指定页面可以在移动设备上正确可视化 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- 指定可以看到网页内容的窗口区域 -->
+
+
+    <!-- 对服务器的要求 -->
+    <meta http-equiv="content-type" content="text/html"> <!-- 指定服务器返回的文档格式 -->
+    <meta http-equiv="default-style"/> <!-- 指定文档样式 -->
+
+
+    <title>教学网页结构</title>
+    <!-- 引入 CSS 文件 -->
+    <link rel="stylesheet" href="index.css"> 
+
+</head>
+<body>
+    <!--  
+
+    什么是node 节点？
+    <>这就是节点，添加渲染到这里，然后浏览器再呈现出去</>
+
+    划分区域
+    <div> 无意义，用于分割
+    <header> 头部
+    <nav> 导航栏
+    <main> 主页
+    <aside> 侧边栏
+    <footer> 底部
+    <hr> 横分割线
+
+
+    内容
+    <img> 可加入图片地址
+    <video> 可加入视频地址
+    <audio> 可加入音频地址
+    <list> 清单
+        <ol> <ul> 样式1
+            <li> 一行
+        <dl> 样式2
+            <dt> 标题
+            <dd> 内容
+    <table> 表格
+        <caption> 标题
+        <tr> 行
+        <td> 列
+    
+    
+    发起请求
+    <a> 可附带链接
+    <form> 代表可以发起request请求
+        <input> 代表可以输入内容
+        <button> 代表可以加入交互
+
+    标题
+    <h1> 
+    <h2>
+    <h3>
+    <h4>
+    <h5>
+    <h6>
+
+    文章
+    <article> 文章
+    <section> 章节
+    <p> 分段
+    
+    字体
+    <i> 斜体
+    <em> 斜体加重
+    <b> 加粗
+    <strong> 加粗加重
+    <del> 划去线
+    <span> 无 只是为了方便添加css显示效果
+
+    -->
+
+    <!-- <hr> -->
+    <header class="——————————————————1头部——————————————————">
+        <div class="logo">
+            <a href="#" target="_blank">
+                <img src="img/996.png" alt="0x996" width="80px" height="80px" title="0x996">
+            </a>
+        </div>
+        <div class="search">
+            <form action="https://www.google.com/search" target="_blank" method="get">
+                <input type="text" name="q">
+                <button>搜索</button>
+            </form>
+        </div>
+        <div class="action">
+            <a href="#">签到</a> | 
+            <a href="#">设置</a> | 
+            <a href="#">计费</a> | 
+            <a href="#">社区</a> | 
+            <a href="#">教学</a> | 
+        </div>
+        <div class="user">
+            <button onclick="location.href='#login'">登录/注册</button>
+        </div>
+    </header>
+
+
+    <!-- <hr> -->
+    <nav class="——————————————————2导航栏——————————————————">
+        <div> 
+            <a href="#" onclick="showPage('home')">首页</a>  
+            <a href="#" onclick="showPage('neirong')">价格清单和表格</a>
+            <a href="#" onclick="showPage('shangchuan')">上传购买信息</a>
+        </div>
+    </nav>
+
+
+    <!-- <hr> -->
+    <main class="——————————————————3主页——————————————————">
+        <div id="content">
+            <div id="home" class="page">
+                <img src="img/998.png" alt="0x998" width="150px" height="auto"/>
+                <audio src="audio/1710306654.wav" controls></audio>
+                <h2>欢迎来到我的网站</h2>
+                <p>在这里，您可以找到各种有趣的内容和资源。</p>
+            </div>
+
+            <div id="neirong" class="page" style="display:none;">
+                <h2>价格清单和表格</h2>
+                
+                <h3>水果种类清单</h3>
+                <ol>
+                    <li>苹果:新鲜美味，适合生吃或做成苹果派。</li>
+                    <li>香蕉:富含钾元素，适合运动后食用。</li>
+                    <li>橙子:多汁且富含维生素C，适合榨汁饮用。</li>
+                </ol>
+
+                <h3>物品编号</h3>
+                <ul>
+                    <li>x01 - 苹果</li>
+                    <li>x02 - 香蕉</li>
+                    <li>x03 - 橙子</li>
+                </ul>
+                
+                <h3>价格</h3>
+                <table border="1">
+                    <caption>价位表</caption>
+                    <tr>
+                        <th>水果名称</th>
+                        <th>价格（元）</th>
+                    </tr>
+                    <tr>
+                        <td>苹果</td>
+                        <td>3元</td>
+                    </tr>
+                    <tr>
+                        <td>香蕉</td>
+                        <td>2元</td>
+                    </tr>
+                    <tr>
+                        <td>橙子</td>
+                        <td>4元</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="shangchuan" class="page" style="display:none;">
+                <h2>上传购买信息</h2>
+                <form action="">
+
+                    <!-- 文本输入 -->
+                    <input type="text" disabled value="请输入真实信息"><br>
+                    账户：<input type="text" name="account" maxlength="10"><br>
+                    密码：<input type="password" name="psd" maxlength="10"><br>
+                    邮箱：<input type="email" name="email"><br>
+
+                    <!-- 单选框 -->
+                    性别：
+                    <input type="radio" name="gender" value="male">男
+                    <input type="radio" name="gender" value="female">女
+                    <br>
+
+                    <!-- 选择栏 -->
+                    <select name="food" >
+                        <option value="apple">苹果</option>
+                        <option value="banana">香蕉</option>
+                        <option value="orange">橙子</option>
+                    </select>
+                    
+                    <!-- 数字输入 -->
+                    购买个数：<input type="number" name="num"><br>
+
+                    <!-- 多选 -->
+                    选择服务:
+                    <input type="checkbox" name="xxx" value="a">送货上门
+                    <input type="checkbox" name="xxx" value="b">24h发货
+                    <input type="checkbox" name="xxx" value="c">运送险
+                    <br>
+
+
+                    <!-- 上传文件 -->
+                    购买资格凭证:<br>
+                    <input type="file" name="file"><br>
+
+                    <!-- 多行输入栏 -->
+                    备注:<br>
+                    <textarea name="other"  cols="30" rows="10"></textarea><br>
+
+                    
+                    <!-- 勾选框 -->
+                    <input type="checkbox" name="x2" value="read2"/>
+                    <label for="read2">我已经阅读并同意 用户协议</label>
+                    <br>
+
+                    <!-- 按钮 -->
+                    <button>提交</button>
+                    <button type="reset">重置</button>
+
+
+
+    
+                    
+                </form>
+                
+            </div>
+                
+          
+        </div>
+
+        <script>
+            function showPage(page) {
+                const pages = document.querySelectorAll('.page'); // 选择所有具有 'page' 类的元素
+                pages.forEach(p => p.style.display = 'none'); // 隐藏所有页面
+                document.getElementById(page).style.display = 'block'; // 显示选中的页面
+            }
+        </script>
+
+    </main>
+    
+
+    <!-- <hr> -->
+    <footer class="——————————————————4底部——————————————————">
+        <div>
+            <img src="img/997.png" alt="0x997" width="90px" height="auto"/>
+            <p>如果您有任何问题或建议，欢迎随时与我们联系。感谢您的访问！</p>
+        </div>
+
+        Copyright © 2024 WildFire Inc. 保留所有权利。
+        <br>
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">回到顶部</a>
+        <a href="#" onclick="location.reload();">刷新</a>
+    </footer>
+
+
+</body>
+</html>
+
+
